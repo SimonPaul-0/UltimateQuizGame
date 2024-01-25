@@ -41,7 +41,7 @@ If you have additional questions or improvements to suggest, feel free to contri
 ## Author
 [Simon Paul]
 
-Replace `<repository_url>` and `<repository_directory>` with your actual repository URL and directory. You can also customize the content further to suit your preferences.
+ ## Replace `<repository_url>` and `<repository_directory>` with your actual repository URL and directory. You can also customize the content further to suit your preferences.
 
 Happy quizzing :)
 
