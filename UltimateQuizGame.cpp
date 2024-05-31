@@ -37,7 +37,7 @@ int main() {
         {"Who developed the theory of relativity?", "Albert Einstein"},
         {"What is the capital of Australia?", "Canberra"},
         {"Which famous scientist formulated the laws of motion and universal gravitation?", "Isaac Newton"},
-        {"What is the largest desert in the world?", "Antarctica"},
+        {"What is the largest desert in the world?", "Sahara"},
         {"Who is known as the 'Father of Computer Science'?", "Alan Turing"},
         {"What is the currency of Japan?", "Japanese Yen"},
         {"Which planet is known as the 'Morning Star' or 'Evening Star'?", "Venus"},
