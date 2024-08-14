@@ -9,8 +9,10 @@ bool caseInsensitiveCompare(char a, char b) {
 
 // Case-insensitive string comparison
 bool caseInsensitiveStringCompare(const std::string& str1, const std::string& str2) {
-    return str1.size() == str2.size() &&
-           std::equal(str1.begin(), str1.end(), str2.begin(), caseInsensitiveCompare);
+    if (str1.size() != str2.size()) {
+        return false;
+    }
+    return std::equal(str1.begin(), str1.end(), str2.begin(), caseInsensitiveCompare);
 }
 
 bool askQuestion(const std::string& question, const std::string& correctAnswer) {
@@ -18,6 +20,16 @@ bool askQuestion(const std::string& question, const std::string& correctAnswer) 
     std::cout << question << " ";
     std::getline(std::cin, userAnswer);
 
+    if (std::cin.fail()) {
+        std::cerr << "Error reading input. Exiting...\n";
+        std::exit(1);
+    }
+
+    // Remove leading and trailing spaces
+    userAnswer.erase(userAnswer.find_last_not_of(" \t\r\n")+1);
+    userAnswer.erase(0, userAnswer.find_first_not_of(" \t\r\n"));
+
+    // Case-insensitive comparison
     return caseInsensitiveStringCompare(userAnswer, correctAnswer);
 }
 
@@ -37,7 +49,7 @@ int main() {
         {"Who developed the theory of relativity?", "Albert Einstein"},
         {"What is the capital of Australia?", "Canberra"},
         {"Which famous scientist formulated the laws of motion and universal gravitation?", "Isaac Newton"},
-        {"What is the largest desert in the world?", "Sahara"},
+        {"What is the largest desert in the world?", "Antarctica"},
         {"Who is known as the 'Father of Computer Science'?", "Alan Turing"},
         {"What is the currency of Japan?", "Japanese Yen"},
         {"Which planet is known as the 'Morning Star' or 'Evening Star'?", "Venus"},
